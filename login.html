@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Consultant Portal</title>
+    <link rel="stylesheet" href="assets/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+
+<body class="bg-light">
+
+    <div class="auth-controls" style="position: fixed; top: 20px; right: 20px; display: flex; gap: 10px; z-index: 1000;">
+        <button id="theme-toggle" class="theme-toggle">🌙</button>
+    </div>
+
+    <div class="auth-container d-flex align-items-center justify-content-center min-vh-100 py-5">
+        <div class="card p-5 shadow" style="max-width: 450px; width: 100%;">
+            <div class="text-center mb-5">
+                <a href="index.html" class="logo mb-4 d-inline-block"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle; margin-right: 8px;"><path d="M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2Z" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2V8H20" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 13H8" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 17H8" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 9H8" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>WP<span>Consult</span></a>
+                <h3>Sign in to your account</h3>
+                <p class="text-secondary small">Access your project drafts and research assets.</p>
+            </div>
+
+            <form id="login-form">
+                <div class="mb-4">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-control" required>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Password</label>
+                    <div class="password-field">
+                        <input type="password" id="password" class="form-control" required>
+                        <button type="button" class="password-toggle" onclick="togglePassword('password')">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="eye-icon"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="mb-4 d-flex justify-content-between align-items-center auth-options">
+                    <div class="form-check mb-0">
+                        <input type="checkbox" id="remember">
+                        <label for="remember" class="small text-secondary">Remember me</label>
+                    </div>
+                    <a href="#" class="small text-accent">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 py-3 mb-4">Sign In</button>
+            </form>
+
+            <script>
+                function togglePassword(id) {
+                    const input = document.getElementById(id);
+                    const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                    input.setAttribute('type', type);
+                    
+                    const btn = input.nextElementSibling;
+                    if (type === 'text') {
+                        btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>';
+                    } else {
+                        btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>';
+                    }
+                }
+            </script>
+
+            <div class="divider">OR</div>
+
+            <div class="social-auth">
+                <button class="btn-social btn-google">
+                    <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.79-.07-1.54-.19-2.27h-11.56v4.51h6.48c-.28 1.48-1.11 2.73-2.36 3.57v2.96h3.83c2.23-2.05 3.52-5.07 3.52-8.77z"/><path fill="#34A853" d="M11.995 24c3.24 0 5.95-1.08 7.93-2.91l-3.83-2.96c-1.06.71-2.42 1.14-4.1 1.14-3.15 0-5.81-2.13-6.76-4.99H1.405v3.07c1.98 3.93 6.04 6.65 10.59 6.65z"/><path fill="#FBBC05" d="M5.235 14.28c-.24-.71-.38-1.47-.38-2.28s.14-1.57.38-2.28V6.65H1.405C.515 8.42 0 10.4 0 12.5s.515 4.08 1.405 5.85l3.83-3.07z"/><path fill="#EA4335" d="M11.995 4.81c1.76 0 3.35.61 4.59 1.79l3.44-3.44C17.945 1.07 15.235 0 11.995 0 7.445 0 3.385 2.72 1.405 6.65l3.83 3.07c.95-2.86 3.61-4.91 6.76-4.91z"/></svg>
+                    Continue with Google
+                </button>
+                <button class="btn-social btn-apple">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.057 12.781c.018 2.583 2.235 3.445 2.261 3.453-.022.066-.35 1.203-1.16 2.373-.699 1.015-1.425 2.026-2.565 2.048-1.12.02-1.48-.658-2.763-.658-1.282 0-1.68.64-2.742.679-1.101.041-1.921-.954-2.626-1.968-1.442-2.074-2.546-5.864-1.066-8.414.733-1.266 2.039-2.069 3.468-2.089 1.082-.02 2.104.725 2.769.725.663 0 1.912-.9 3.203-.772.54.022 2.054.217 3.029 1.636-.078.048-1.811 1.052-1.793 3.369zm-2.419-7.143c.582-.701.972-1.677.865-2.638-.83.033-1.834.551-2.427 1.245-.533.62-.999 1.611-.874 2.55.921.071 1.854-.456 2.436-1.157z"/></svg>
+                    Continue with Apple
+                </button>
+            </div>
+
+            <p class="text-center text-secondary small">Don't have an account? <a href="signup.html"
+                    class="text-accent fw-bold">Sign up</a></p>
+        </div>
+    </div>
+
+    <script src="assets/js/theme-toggle.js"></script>
+</body>
+
+</html>
+
+
+
+
