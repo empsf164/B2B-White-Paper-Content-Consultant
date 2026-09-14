@@ -35,9 +35,9 @@
                     </li>
                 </ul>
                 <div class="nav-actions">
-                    <button class="theme-toggle d-none d-lg-flex">🌙</button>
+                    <button id="theme-toggle" class="theme-toggle d-none d-lg-flex">🌙</button>
                     <a href="signup.html" class="btn btn-primary d-none d-lg-flex">Signup</a>
-                    <button id="mobile-toggle" class="mobile-toggle">☰</button>
+                    <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle Navigation">☰</button>
                 </div>
             </div>
         </div>
@@ -92,13 +92,15 @@
                                     <input type="email" class="form-control">
                                 </div>
                                 <div class="col-12">
-                                    <label class="form-label">Industry</label>
-                                    <select class="form-control">
-                                        <option>Select Industry</option>
-                                        <option>Cybersecurity</option>
-                                        <option>Fintech</option>
-                                        <option>SaaS / Cloud</option>
-                                        <option>Other</option>
+                                    <label class="form-label">Industry Sector</label>
+                                    <select class="form-control" required>
+                                        <option value="" disabled selected>Select your industry sector...</option>
+                                        <option value="cybersecurity">Cybersecurity & Threat Intelligence</option>
+                                        <option value="fintech">Fintech, Banking & Digital Assets</option>
+                                        <option value="saas">B2B Enterprise SaaS & Cloud Systems</option>
+                                        <option value="ai">AI, Machine Learning & Analytics</option>
+                                        <option value="healthtech">HealthTech & Biotech Systems</option>
+                                        <option value="other">Other / Custom Research Project</option>
                                     </select>
                                 </div>
                                 <div class="col-12">

@@ -10,32 +10,34 @@
 </head>
 <body class="bg-light">
 
-    <div class="auth-controls" style="position: fixed; top: 20px; right: 20px; display: flex; gap: 10px; z-index: 1000;">
+    <div class="auth-controls">
         <button id="theme-toggle" class="theme-toggle">🌙</button>
     </div>
 
     <div class="auth-container d-flex align-items-center justify-content-center min-vh-100 py-5">
         <div class="card p-5 shadow" style="max-width: 500px; width: 100%;">
-            <div class="text-center mb-5">
-                <a href="index.html" class="logo mb-4 d-inline-block"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle; margin-right: 8px;"><path d="M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2Z" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2V8H20" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 13H8" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 17H8" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 9H8" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>WP<span>Consult</span></a>
+            <div class="text-center mb-4">
+                <a href="index.html" class="logo mb-3 d-inline-block"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle; margin-right: 8px;"><path d="M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2Z" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2V8H20" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 13H8" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 17H8" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 9H8" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>WP<span>Consult</span></a>
                 <h3>Create an account</h3>
                 <p class="text-secondary small">Start your white paper project today.</p>
             </div>
             
             <form id="signup-form">
-                <div class="mb-4">
-                    <label class="form-label">First Name</label>
-                    <input type="text" class="form-control" required>
+                <div class="row g-3 mb-3">
+                    <div class="col-6">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
                 </div>
-                <div class="mb-4">
-                    <label class="form-label">Last Name</label>
-                    <input type="text" class="form-control" required>
-                </div>
-                <div class="mb-4">
+                <div class="mb-3">
                     <label class="form-label">Work Email</label>
                     <input type="email" class="form-control" placeholder="name@company.com" required>
                 </div>
-                <div class="mb-4">
+                <div class="mb-3">
                     <label class="form-label">Password</label>
                     <div class="password-field">
                         <input type="password" id="password" class="form-control" placeholder="Min. 8 characters" required>
@@ -44,7 +46,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="mb-4">
+                <div class="mb-3">
                     <label class="form-label">Confirm Password</label>
                     <div class="password-field">
                         <input type="password" id="confirm-password" class="form-control" placeholder="Repeat your password" required>
@@ -53,11 +55,11 @@
                         </button>
                     </div>
                 </div>
-                <div class="mb-4 form-check">
+                <div class="mb-3 form-check">
                     <input type="checkbox" id="terms" required>
                     <label for="terms" class="small text-secondary">I agree to the <a href="#" class="text-accent">Terms & Conditions</a> and <a href="#" class="text-accent">Privacy Policy</a></label>
                 </div>
-                <button type="submit" class="btn btn-primary w-100 py-3 mb-4">Create Account</button>
+                <button type="submit" class="btn btn-primary w-100 py-3 mb-3">Create Account</button>
             </form>
 
             <script>
